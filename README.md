@@ -1,5 +1,4 @@
 # AWS-DevOps-Projects
- # AWS DevOps Projects Showcase
 
 ## Introduction
 This repository serves as a showcase of my knowledge and experience in AWS and DevOps. The collection of projects presented here demonstrates my ability to set up architectures and systems in AWS with automation, high availability, and using a variety of AWS services. These projects are meant to highlight my expertise in both AWS and DevOps principles.
