@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities in Malaysia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 40px;
+        }
+        .city-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .city {
+            font-size: 18px;
+            color: #333;
+        }
+        .image {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+        }
+        .slider-button {
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cities in Malaysia</h1>
+    <div class="city-container">
+        <div class="slider-button" onclick="previousCity()">&#171;</div>
+        <div id="city-container">
+            <!-- City and image will be displayed here -->
+        </div>
+        <div class="slider-button" onclick="nextCity()">&#187;</div>
+    </div>
+
+    <script>
+        const cities = [
+            { name: 'Kuala Lumpur', image: 'https://via.placeholder.com/300x200?text=Kuala+Lumpur' },
+            { name: 'George Town', image: 'https://via.placeholder.com/300x200?text=George+Town' },
+            { name: 'Ipoh', image: 'https://via.placeholder.com/300x200?text=Ipoh' },
+            // Add more cities and placeholder images here
+        ];
+
+        let currentIndex = 0;
+
+        function displayCity() {
+            const container = document.getElementById('city-container');
+            container.innerHTML = '';
+            const cityElement = document.createElement('div');
+            cityElement.className = 'city';
+            cityElement.textContent = cities[currentIndex].name;
+            container.appendChild(cityElement);
+            const imageElement = document.createElement('img');
+            imageElement.className = 'image';
+            imageElement.src = cities[currentIndex].image;
+            container.appendChild(imageElement);
+        }
+
+        function nextCity() {
+            currentIndex = (currentIndex + 1) % cities.length;
+            displayCity();
+        }
+
+        function previousCity() {
+            currentIndex = (currentIndex - 1 + cities.length) % cities.length;
+            displayCity();
+        }
+
+        displayCity(); // Initial display
+    </script>
+</body>
+</html>
