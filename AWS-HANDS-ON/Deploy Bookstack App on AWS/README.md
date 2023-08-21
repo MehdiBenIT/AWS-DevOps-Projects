@@ -19,13 +19,3 @@ I create a security group to allow only HTTP (port 80), HTTPS(port 443) and SSH 
 ![Alt text](image.png)
 
 4. 
-5. fs
-6. fs
-7. f
-8. sf
-9. sf
-10. sf
-11. sf
-12. sf
-13. sf
-14. sf
