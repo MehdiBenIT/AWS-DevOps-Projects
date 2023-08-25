@@ -1,0 +1,19 @@
+Resources:
+  BookStackInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0c55b159cbfafe1f0
+      UserData:
+        Fn::Base64: !Sub |
+          # Include the content of the user-data script here
+
+  BookStackDB:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      AllocatedStorage: 20
+      Engine: MySQL
+      EngineVersion: 5.7
+      MasterUsername: username
+      MasterUserPassword: password
+      DBInstanceClass: db.t2.micro
