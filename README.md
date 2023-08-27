@@ -24,7 +24,3 @@ The primary purpose of this repository is to showcase my work and projects in th
 ## Projects Overview
 As there are numerous projects within this showcase, each project's specific overview and details will be available in their respective directories. Feel free to explore and examine each project to gain insights into the technologies and AWS services utilized.
 
-## Contact
-For any inquiries or feedback regarding this repository or the projects within it, you can reach me at [mehdi.remnant836@simplelogin.com] or connect with me on [LinkedIn, Twitter, or other preferred social media platforms].
-
-
