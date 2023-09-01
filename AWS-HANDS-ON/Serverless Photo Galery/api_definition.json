@@ -1,0 +1,67 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "Serverless Photo Gallery API",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/photos": {
+        "post": {
+          "summary": "Upload a photo",
+          "description": "Upload a photo to the S3 bucket",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "image_base64": {
+                      "type": "string",
+                      "description": "Base64 encoded image data"
+                    },
+                    "image_name": {
+                      "type": "string",
+                      "description": "The name for the image in the S3 bucket"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Successfully uploaded the photo",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "message": "Successfully uploaded photo.jpg to your-bucket-name"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "message": "An error occurred"
+                  }
+                }
+              }
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "uri": "arn:aws:apigateway:region:lambda:path/2015-03-31/functions/arn:aws:lambda:region:account-id:function:YourLambdaFunctionName/invocations",
+            "responses": {
+              "default": {
+                "statusCode": "200"
+              }
+            },
+            "httpMethod": "POST",
+            "type": "aws_proxy"
+          }
+        }
+      }
+    }
+  }
+  
