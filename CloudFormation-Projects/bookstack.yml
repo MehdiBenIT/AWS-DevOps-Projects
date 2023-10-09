@@ -6,7 +6,7 @@ Resources:
       ImageId: ami-0c55b159cbfafe1f0
       UserData:
         Fn::Base64: !Sub |
-          # Include the content of the user-data script here
+
 
   BookStackDB:
     Type: AWS::RDS::DBInstance
