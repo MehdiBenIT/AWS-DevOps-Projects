@@ -13,3 +13,8 @@ resource "aws_instance" "test_tf" {
   }
   
 }
+
+#
+#resource "aws_security_group" "WEB_SG" {
+  
+#}
